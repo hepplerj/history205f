@@ -1,0 +1,15 @@
+<p>
+  <label for="amount">Year range:</label>
+  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+</p>
+ 
+<div id="slider-range"></div>
+
+<input type="radio" name="type" id="organizations" />Organizations
+<input type="radio" name="type" id="people" checked />People
+<input type="radio" name="type" id="keywords" />Keywords
+<input type="radio" name="type" id="locations" />Locations
+
+<button onclick="update()">Update!</button>
+
+<div id="container"></div>
