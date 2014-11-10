@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
   	function getSearchType() {
   		if ($("#organizations").is(':checked')) {
@@ -39,7 +40,16 @@
            		return;
        		}
        		if (this.status == 200) {
-           		$("#container").html(this.responseText);
+              var topten = JSON.parse(this.responseText);
+
+              var table = "<table class=\"table\"><tr><th>Name</th><th>Articles</th></tr>";
+              for (var topic in topten) {
+                var split = topic.split("|");
+                table = table.concat("<tr><td>" + split[0] + "</td><td>" + split[1] + "</td></tr>");
+              }
+
+           		table = table.concat("</table>");
+              $("#container").html(table);
            	} else {
            		console.log("Error.");
               $("#container").html("<h3>Insufficient data. Please try again.</h3>");
