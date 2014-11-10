@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def start
-  	@article = Article.find(1)
   end
 
   def get
