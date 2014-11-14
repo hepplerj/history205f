@@ -1,0 +1,19 @@
+<div class="jumbotron"><h2>Some articles about <%= @term %> that we counted</h2>
+
+<p>
+<a href="/writing/thoughts#<%= @searchType %>">What does the <i>New York Times</i> archive teach us about the <%= @searchType %> of Silicon Valley?</a>
+</p>
+</div>
+<br\>
+<div class="lead">
+	<p>Here is a set of articles about <%= @term %> that were published in the <i>New York Times</i> between <%= @startDate %> and <%= @endDate %>. Click on any of the headlines to read the article in the <i>Times</i> archives. Refresh the page and different articles may appear.</p>
+</div>
+
+<dl>
+	<% for i in 0..9 %>
+		<% if i < @articles.length() then %>
+			<dt><a href="<%= @articles[i].URL %>"> <%= @articles[i].headline %></a> <%= @articles[i].byline %><%= @articles[i].date.strftime(", %B %-d, %Y") %> </dt>
+			<dd class="small"><%= @articles[i].lead_paragraph %></dd></br>
+		<% end %>
+	<% end %>
+</dl>
