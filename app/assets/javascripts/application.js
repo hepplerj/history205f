@@ -42,6 +42,20 @@
        		if (this.status == 200) {
             var topten = JSON.parse(this.responseText);
 
+            var table = "<table class=\"table table-hover\"><tr><th>Name</th><th>Articles</th></tr>";
+            for (var topic in topten) {
+              var split = topic.split("|");
+              table = table.concat("<tr><td><a href=\"/term/explore?startYear=" + startYear + "&endYear=" + endYear +
+                "&searchType=" + searchType + "&term=" + split[0] + "\">"
+                + split[0].toUpperCase() + "</a></td><td>" + split[1] + "</td></tr>");
+            }
+
+         		table = table.concat("</table>");
+            $("#container").html(table);
+
+
+            /* console.log("BEGIN");
+
             var width = 100;
             var height = 25;
             var x = d3.scale.linear().range([0, width]);
@@ -63,20 +77,6 @@
              .x(function(d) { return x(d.date); })
              .y(function(d) { return y(d.articles); });
 
-            var table = "<table class=\"table\"><tr><th>Name</th><th>Articles</th><th>Sparkline</th></tr>";
-            for (var topic in topten) {
-              var split = topic.split("|");
-              table = table.concat("<tr><td>" + split[0] + "</td><td>" + split[1] + "</td><td id=\"" + split[0] + "\"></td></tr>");
-            }
-
-         		table = table.concat("</table>");
-            $("#container").html(table);
-
-
-            console.log("BEGIN");
-
-
-
             console.log("PAST LINE");
 
             for (var topic in topten) {
@@ -95,15 +95,15 @@
 
               console.log("PAST DOMAIN");
 
-              $(id).html = "BOO";
-                append('svg')
+              d3.select(id)
+                .append('svg')
                 .attr('width', width)
                 .attr('height', height)
                 .append('path')
                 .datum(data)
                 .attr('class', 'sparkline')
                 .attr('d', line);
-            }
+            } */
           } else {
            	console.log("Error.");
             $("#container").html("<h3>Insufficient data. Please try again.</h3>");

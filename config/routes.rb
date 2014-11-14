@@ -1,6 +1,12 @@
 Siliconvalley::Application.routes.draw do
+  get "writing/methodology"
+  get "writing/thoughts"
+  get "term/explore"
   get "home/start"
   get "home/get"
+  get "term/explore"
+  get "writing/methodology"
+  get "writing/thoughts"
   root 'home#start'
 
   # Example of regular route:
