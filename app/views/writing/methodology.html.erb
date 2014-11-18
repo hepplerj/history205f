@@ -1,9 +1,24 @@
+<div class="jumbotron row">
+	<h2>Methodology and About Me</h2>
+	<div class="lead">
+		<a href="/home/start">Home</a>
+		<a href="/writing/thoughts#thesis">Thesis</a> 
+		<a href="/writing/thoughts#abstract">Abstract</a>
+		<a href="/writing/thoughts#analysis">Analysis</a>
+		<a href="/writing/methodology">About</a>
+	</div>
+</div>
+
 <div><h2>About the Project</h2></div>
 <p class="lead">This is a final project created for History 205F: Digital Humanities, at Stanford University. The goal of the project is to illuminate a major national newspaper’s perspective on the growth of Silicon Valley in the last forty years.</p>
 <div><h2>About the Creator</h2></div>
 <p class="lead">My name is Paul Carroll, and I’m a senior at Stanford majoring in Computer Science and History.</p>
 <div><h2>Methodology</h2></div>
-<div class="lead"><p>I began by querying the <i>New York Times</i> archives for all articles relating to “Silicon Valley.” Then, using the <i>New York Times</i> developer API, I funneled these articles into a database. I cleaned the data with Google Refine, and then wrote a program in Ruby to aggregate the articles according to their tags.</p>
-<p>Because the <i>Times</i> prevents developers from harvesting more than the first paragraph of each article, I limited my research to the article metadata. Fortunately, this metadata was very good, as a team of people at the <i>Times</i> had tagged most articles in the archive with person, location, organizational, and subject keywords.</p>
-<p>Because the project is so simple, my hope is that it will be more accessible and transparent than the average digital humanities project.
-</p></div>
+<div class="lead">
+<p>
+	The first stage of this project was fairly simple. I accessed the <i>New York Times</i> archives through the provided developer API and harvested all the articles pertaining to the query "Silicon Valley." I funneled these into a spreadsheet and cleaned them with Google Refine.
+</p>
+<p>
+	In order to understand how I aggregated these articles by keywords, people, organizations, and locations, it is necessary to know a little bit about the structure of the <i>New York Times</i> archive. Each article in the archive is annotated with certain kinds of metadata: the date that it was published, the medium in which it was published (print or digital), the word count, etc. Of particular interest are the "content tags": annotations that try to express what an article is about as concisely as possible. The <i>Times</i> includes person and organization tags, which specify the people and organizations most important to the article; keyword tags, which specify the subject of the article; and location tags, which pin the article to some location on a world map. These tags make it straightfoward to determine how many articles contain a particular topic, and the tables produced by this website are essentially aggregations of this metadata.
+</p>
+</div>

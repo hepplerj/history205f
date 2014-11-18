@@ -1,48 +1,35 @@
-
 <div class="jumbotron row">
-	<div class="col-md-12 col-lg-12">
-		<h2>Silicon Valley, according to the <i>New York Times</i></h2>
-		<h4>a digital humanities project by Paul Carroll, for History 205F</h4>
+	<h2>Silicon Valley, according to the <i>New York Times</i></h2>
+	<h4>a digital humanities project by Paul Carroll, for History 205F</h4>
+	<div class="lead">
+		<a href="/home/start">Home</a>
+		<a href="/writing/thoughts#thesis">Thesis</a> 
+		<a href="/writing/thoughts#abstract">Abstract</a>
+		<a href="/writing/thoughts#analysis">Analysis</a>
+		<a href="/writing/methodology">About</a>
 	</div>
 </div>
+<p class="lead">
+	Who matters most in the history of Silicon Valley? Is it Robert Noyce? Bill Gates? Steve Jobs? And which companies have been most important--Google, Apple, Facebook? How has the economy in the valley changed since the 1980's? And when did we begin to think of Silicon Valley as "Silicon Valley," anyway?
+</p>
 
-<div class="left-and-right">
-	<div class="left">
-		<p class="lead">
-			Who matters most in the history of Silicon Valley? Is it Robert Noyce? Bill Gates? Steve Jobs? And which companies have been most important--Google, Apple, Facebook? How has the economy in the valley changed since the 1980's? And when did we begin to think of Silicon Valley as "Silicon Valley," anyway?
-		</p>
+<p>To begin answering these questions, play around with the tool below. Discover which people, organizations, keywords, and locations have appeared most often in the <i>New York Times</i>'s reporting on Silicon Valley. When you're ready for some thoughts on what this data might mean, <a href="/writing/thoughts">click here.</a> Refresh the page if the slider disappears.<p>
 
-		<p>
-		This website answers these and other thorny historical questions, from the perspective of one of our nation's most prominent newspapers, the <i>New York Times</i>. Affixed to every article in the <i>Times</i> database are four classes of tags: person tags, which identify the people most central to the article; organization tags, which are like person tags, but for companies; subject tags, which summarize the article's content in a few words; and location tags, which place the article on a world map. In the set of articles relating to Silicon Valley, some tags appear more frequently than others. <strong>This website makes the assumption that people, organizations, subjects, and locations that occur frequently in articles about Silicon Valley are the people, organizations, subjects, and locations that constitute Silicon Valley--at least, according to the <i>Times</i></strong>. To this end, this website aggregates tags from 1975 to 2014 from every article that discusses Silicon Valley. (Please be aware before you begin searching that the sample size of articles from the 1970's is very small.)
-		</p>
+<p>
+<label for="amount">Year range:</label>
+<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+</p>
 
-		<p>For details on methodology, <a href="/writing/methodology">click here</a>.<br/>
-		For thoughts on what this data suggests about the history of Silicon Valley, <a href="/writing/thoughts">click here</a>.
-		</p>
-	</div>
-
-	<div class="right">
-		<p><strong>To begin, choose a date range and a category of tag. Then hit update. Click on any of the names to learn more about how that person, organization, subject, or location mattered to the Valley.</strong> If the search bar disappears, just refresh the page. Sorry, I'm not a JavaScript master, I don't know why that sometimes happens.</p>
-
-		<p>
-		<label for="amount">Year range:</label>
-		<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" />
-		</p>
-
-		<div id="slider-range"></div>
+<div id="slider-range"></div>
 
 
-		<input type="radio" name="type" id="organizations" />Organizations
-		<input type="radio" name="type" id="people" checked />People
-		<input type="radio" name="type" id="keywords" />Subjects
-		<input type="radio" name="type" id="locations" />Locations
+<input type="radio" name="type" id="organizations" />Organizations
+<input type="radio" name="type" id="people" checked />People
+<input type="radio" name="type" id="keywords" />Subjects
+<input type="radio" name="type" id="locations" />Locations
 
 
-		<button onclick="update()" class="btn">Update!</button>
-		<br/>
+<button onclick="update()" class="btn">Update!</button>
+<br/>
 
-		<div id="container"></div>
-	</div>
-</div>
-
-
+<div id="container"></div>
